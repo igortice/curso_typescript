@@ -2,15 +2,11 @@
   "compilerOptions": {
     "target": "es5",
     "module": "commonjs",
-    "declaration": false,
-    "noImplicitAny": false,
-    "removeComments": true,
-    "noLib": false,
-    "strictNullChecks": true
+    "noImplicitAny": true,
+    "sourceMap": true, // debug browser true
+    "strictNullChecks": true,
+    "noUnusedParameters": false
   },
-  "include": [
-    "**/*"
-  ],
   "exclude": [
     "node_modules"
   ]
