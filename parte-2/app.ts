@@ -86,3 +86,47 @@ let userData: { name: string, age: number } = {
 //   a: 'Hello',
 //   b: 22
 // };
+
+// complex objects
+let complex: { data: number[], output: (all: boolean) => number[] } = {
+  data: [100, 3, 2, 99.3],
+
+  output: function (all: boolean): number[] {
+    return this.data;
+  }
+};
+
+// type alias
+type Complex = { data: number[], output: (all: boolean) => number[] }
+let complex2: Complex = {
+  data: [100, 3, 2, 99.3],
+
+  output: function (all: boolean): number[] {
+    return this.data;
+  }
+};
+
+// union types
+let myRealRealAge: number | string = 37;
+console.log(typeof myRealRealAge, myRealRealAge);
+myRealRealAge = '37';
+console.log(typeof myRealRealAge, myRealRealAge);
+
+// check types
+let finalValue = 'A string';
+if (typeof finalValue == 'number') {
+  console.log('Final value is a number');
+} else if (typeof finalValue == 'string') {
+  console.log('Final value is a string');
+}
+
+// never
+function  neverReturns(): never {
+  throw new Error('An error!');
+}
+
+// Nullable Types
+let canBeNull: number | null = 12;
+canBeNull = null; //"strictNullChecks": false | true
+// canBeNull = 'Igor';
+console.log(canBeNull);

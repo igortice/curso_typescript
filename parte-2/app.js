@@ -47,3 +47,32 @@ var userData = {
     name: 'igor',
     age: 37
 };
+var complex = {
+    data: [100, 3, 2, 99.3],
+    output: function (all) {
+        return this.data;
+    }
+};
+var complex2 = {
+    data: [100, 3, 2, 99.3],
+    output: function (all) {
+        return this.data;
+    }
+};
+var myRealRealAge = 37;
+console.log(typeof myRealRealAge, myRealRealAge);
+myRealRealAge = '37';
+console.log(typeof myRealRealAge, myRealRealAge);
+var finalValue = 'A string';
+if (typeof finalValue == 'number') {
+    console.log('Final value is a number');
+}
+else if (typeof finalValue == 'string') {
+    console.log('Final value is a string');
+}
+function neverReturns() {
+    throw new Error('An error!');
+}
+var canBeNull = 12;
+canBeNull = null;
+console.log(canBeNull);
