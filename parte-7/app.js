@@ -36,4 +36,9 @@ myPerson.name = 'Iandara';
 myPerson.lastName = 'Girão';
 console.log(myPerson);
 myPerson.greet(myPerson.lastName);
+var myDoubleFunction;
+myDoubleFunction = function (v1, v2) {
+    return (v1 + v2) * 2;
+};
+console.log(myDoubleFunction(2, 3));
 //# sourceMappingURL=app.js.map

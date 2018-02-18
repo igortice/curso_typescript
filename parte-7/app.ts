@@ -1,5 +1,5 @@
 // INTERFACE IS A CONTRACT FOR NO OPTIONAL VARIABLES OR METHODS
-interface Person {
+interface BasePerson {
   name: string;
   age?: number;
 
@@ -8,15 +8,15 @@ interface Person {
   greet(lastName: string): void;
 }
 
-function greet(person: Person) {
+function greet(person: BasePerson) {
   console.log(`Hello, ${person.name}${person.age ? ' - ' + person.age : ''} `);
 }
 
-function revertName(person: Person) {
+function revertName(person: BasePerson) {
   person.name = person.name.split('').reverse().join('');
 }
 
-const person: Person = {
+const person: BasePerson = {
   // age:  37,
   // username: 'igortice',
   name:    'Igor',
@@ -32,11 +32,11 @@ person.greet('Rocha');
 greet({
   name: 'Gabriel',
   age:  5
-} as Person);
+} as BasePerson);
 revertName(person);
 greet(person);
 
-class Person implements Person {
+class Person implements BasePerson {
   name: string;
 
   greet(lastName: string): void {
@@ -45,8 +45,20 @@ class Person implements Person {
 
 }
 
-const myPerson: Person = new Person();
-myPerson.name = 'Iandara';
-myPerson.lastName = 'Girão';
+const myPerson: BasePerson = new Person();
+myPerson.name          = 'Iandara';
+myPerson.lastName      = 'Girão';
 console.log(myPerson);
 myPerson.greet(myPerson.lastName);
+
+// functions types
+
+interface DoubleValueFunc {
+  (number1: number, number2: number): number;
+}
+
+let myDoubleFunction: DoubleValueFunc;
+myDoubleFunction = function (v1: number, v2: number) {
+  return (v1 + v2) * 2;
+};
+console.log(myDoubleFunction(2, 3));
