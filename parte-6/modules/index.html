@@ -3,9 +3,20 @@
   <head>
     <meta charset='UTF-8'>
     <title>typescript curso parte x</title>
-    <script src='app.js'></script>
   </head>
   <body>
     aguarde...
+    <script src='node_modules/systemjs/dist/system.js'></script>
+    <script>
+      SystemJS.config({
+        baseURL:  '/',
+        packages: {
+          '/': {
+            defaultExtension: 'js'
+          }
+        }
+      });
+      SystemJS.import('/app.js');
+    </script>
   </body>
 </html>
