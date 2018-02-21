@@ -8,15 +8,13 @@
   <body>
     <div class="app">aguarde...</div>
     <script>
-        SystemJS.config({
-            baseURL:  '/',
-            packages: {
-                '/': {
-                    defaultExtension: 'js'
-                }
-            }
-        });
-        SystemJS.import('/app.js');
+      SystemJS.config({
+        baseURL:  '/',
+        packages: {
+          '/': { defaultExtension: 'js' }
+        }
+      });
+      SystemJS.import('/app.js');
     </script>
   </body>
 </html>
